@@ -293,7 +293,9 @@ def main(pv_list='/epics/pv_lists/iocanc300.txt',
     tree = display_from_pv_list(macros=macros, title=title,
                                 others=others, groups=groups,
                                 **kwargs)
-    tree.write('output.opi')
+
+    print('Outputting to %s' % output)
+    tree.write(output)
 
 def parse_macro_string(m):
     macros = {}
